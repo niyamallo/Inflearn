@@ -14,6 +14,7 @@ public class ClassStart3 {
         student2.age = 16;
         student2.grade = 80;
         //student1, student2를 객체 또는 인스턴스라고 한다.
+        //student1과 student2는 각각 하나의 객체이고, Student 클래스의 인스턴스이다.
 
         System.out.println("이름:" + student1.name + " 나이:" + student1.age + " 성적:" + student1.grade);
         System.out.println("이름:" + student2.name + " 나이:" + student2.age + " 성적:" + student2.grade);
