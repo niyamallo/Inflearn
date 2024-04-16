@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+#   url을 In-Memory로 변경
+#   DB 없이 메모리에서 test 돌려서 확인하는 법
+#   해당 주소는 H2 홈페이지에 있음. jdbc:h2:mem:test
+#   아니면 spring: 내부에 있는거 다 지워도 됨.
+#   springboot가 별도의 설정이 없으면 메모리 모드로 돌려버리기 때문
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
