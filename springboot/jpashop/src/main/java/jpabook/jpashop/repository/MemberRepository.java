@@ -2,17 +2,20 @@ package jpabook.jpashop.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+// EntityManager는 PersistenceContext라는 표준 애노테이션이 있어야하지만,
+// 스프링 데이터 JPA가 Autowired로도 injection되게 지원을 해줌.
 import jdk.dynalink.linker.LinkerServices;
 import jpabook.jpashop.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class MemberRepository {
 
-    @PersistenceContext
-    private EntityManager em;
+    private final EntityManager em;
 
     public void save(Member member) {
         em.persist(member);
